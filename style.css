@@ -1,0 +1,291 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 28.6em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 20.6em) {
+  html {
+    font-size: 45%;
+  }
+}
+
+:root {
+  --backgroundcolor: #0f172a;
+  --color1: #e2e8f0;
+  --color2: #899ab2;
+  --color-hover: #62ead5;
+  --border: #e5e7eb;
+}
+
+body {
+  font-family: "Segoe UI", Roboto;
+  background-color: var(--backgroundcolor);
+  color: var(--color2);
+  height: 100vh;
+  font-size: 2.2rem;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+@media only screen and (max-width: 64em) {
+  main {
+    display: block;
+  }
+}
+main nav {
+  position: relative;
+  height: 100vh;
+  padding: 12rem 0 12rem 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 64em) {
+  main nav {
+    padding: 6rem 2.5rem 6rem 2.5rem;
+    height: auto;
+  }
+}
+main nav .header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main nav .header .name {
+  font-size: 6rem;
+  color: var(--color1);
+  font-weight: 700;
+}
+main nav .header .job {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color1);
+}
+main nav .header p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+main nav ul {
+  list-style: none;
+}
+main nav .sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+main nav .sections a {
+  color: #899ab2;
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+main nav .sections a span {
+  display: inline-block;
+  width: 40px;
+  border-top: var(--color2) solid 1px;
+  margin-bottom: 0.5rem;
+  margin-right: 1.5rem;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 64em) {
+  main nav .sections a {
+    display: none;
+  }
+}
+main nav .sections a:hover {
+  color: var(--color1);
+}
+main nav .sections a:hover span {
+  width: 70px;
+  border-top: var(--color1) solid 1px;
+}
+main nav .links {
+  display: flex;
+  gap: 2rem;
+}
+main nav .links svg {
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+main nav .links svg path {
+  transition: all 0.3s ease;
+  fill: var(--color2);
+}
+main nav .links svg:hover path {
+  fill: var(--color1);
+}
+main .about {
+  position: relative;
+  overflow-y: scroll;
+  padding: 12rem 12rem 0 0;
+  grid-column: 2/3;
+}
+@media only screen and (max-width: 64em) {
+  main .about {
+    padding: 10rem 2.5rem 6rem 2.5rem;
+  }
+}
+main .about .bio {
+  height: 100vh;
+  padding-top: 12rem;
+  margin-top: -12rem;
+  font-size: 2.2rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 64em) {
+  main .about .bio {
+    margin-top: 0rem;
+    padding: 0rem;
+    height: auto;
+  }
+}
+main .about .bio span {
+  color: var(--color1);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+main .about .bio span:hover {
+  color: #62ead5;
+}
+main .about .bio .beso {
+  cursor: pointer;
+  position: relative;
+}
+main .about .bio .beso img {
+  position: absolute;
+  width: 130px;
+  left: 0;
+  top: 0;
+  transform: translateX(-3%) translateY(9%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+main .about .bio .beso:hover img {
+  opacity: 1;
+  visibility: visible;
+}
+main .about .projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: auto;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  margin-top: -12rem;
+  margin-left: 3px;
+}
+@media only screen and (max-width: 64em) {
+  main .about .projects {
+    margin-left: 0;
+    margin-top: 6rem;
+  }
+}
+main .about .projects .project {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  height: auto;
+}
+@media only screen and (max-width: 64em) {
+  main .about .projects .project {
+    padding: 1rem;
+  }
+}
+main .about .projects .project:hover {
+  background-color: rgba(94, 234, 213, 0.056);
+}
+main .about .projects .project:hover img {
+  outline: 4px #394254 solid;
+}
+main .about .projects .project:hover .project-name {
+  color: var(--color-hover);
+}
+main .about .projects .project:hover .project-name svg {
+  transform: translateX(20%) translateY(-30%);
+}
+main .about .projects .project:hover .project-name svg path {
+  stroke: var(--color-hover);
+}
+main .about .projects .project img {
+  transition: all 0.3s ease-in-out;
+  width: 15rem;
+  height: 7.5rem;
+  border-radius: 0.5rem;
+  outline: 4px #232d41 solid;
+}
+main .about .projects .project .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: var(--color2);
+}
+main .about .projects .project-name {
+  color: var(--color1);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  font-size: 2.4rem;
+}
+main .about .projects .project-name .arrow {
+  margin-left: 1rem;
+  position: relative;
+}
+main .about .projects .project-name .arrow svg {
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+}
+main .about .projects .project-about {
+  font-size: 1.8rem;
+}
+
+#active {
+  color: var(--color1);
+}
+#active span {
+  width: 70px;
+  border-top: var(--color1) solid 1px;
+}
+
+.margin-small {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.headers {
+  display: none;
+  font-weight: 700;
+  color: var(--color1);
+}
+@media only screen and (max-width: 64em) {
+  .headers {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */
